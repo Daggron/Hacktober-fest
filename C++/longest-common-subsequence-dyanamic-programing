@@ -5,6 +5,8 @@ int max(int a,int b)
 		return a;
 	return b;s
 }
+
+//hacktober fest ki tshirt chaiye spam m mt dalio
 int caclSubSequence(char X[],char Y[],int m,int n)
 {
 	char LCS[m+1][n+1];
