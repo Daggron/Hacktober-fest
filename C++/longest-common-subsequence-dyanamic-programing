@@ -63,5 +63,5 @@ int main()
 	int m=strlen(X);
 	int n=strlen(Y);
 	int ans=caclSubSequence(X,Y,m,n);
-	printf("%d",ans);
+	printf("this is the ans %d",ans);
 }
