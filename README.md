@@ -1,3 +1,3 @@
 # Hacktober-fest
-Yaha par hacktobrfest ki tshirts mangwai jati hai
+Yaha par hacktoberfest ki tshirts mangwai jati hai
 
