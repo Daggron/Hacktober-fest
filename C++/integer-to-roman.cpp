@@ -27,7 +27,7 @@ string conversion(int num){
 
 int main(){
     int number;
-    printf("Enter The number\n");
+    printf("Enter The number you want to convert\n");
     scanf("%d",&number);
     string a = conversion(number);
     cout<<a;
