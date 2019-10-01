@@ -1,0 +1,542 @@
+
+public class LinkedList {
+	private class Node {
+		public Node() {
+			// TODO Auto-generated constructor stub
+
+		}
+
+		public Node(int data) {
+			// TODO Auto-generated constructor stub
+			this.data = data;
+		}
+
+		int data;
+		Node next;
+	}
+
+	private Node head;
+	private Node tail;
+	private int size;
+
+	public int size() {
+		return size;
+	}
+
+	public boolean isEmpty() {
+		return size() == 0;
+	}
+
+	public int getFirst() throws Exception {
+		if (isEmpty()) {
+			throw new Exception("LL is Empty");
+		}
+		return head.data;
+	}
+
+	public int getLast() throws Exception {
+		if (isEmpty()) {
+			throw new Exception("LL is Empty");
+		}
+		return tail.data;
+	}
+
+	public int getAt(int idx) throws Exception {
+		if (isEmpty()) {
+			throw new Exception("LL is Empty");
+		}
+
+		if (idx < 0 || idx >= size) {
+			throw new Exception("Invalid Index");
+		}
+
+		Node temp = head;
+		for (int i = 1; i <= idx; i++) {
+			temp = temp.next;
+		}
+		return temp.data;
+	}
+
+	public Node getNodeAt(int idx) throws Exception {
+		if (isEmpty()) {
+			throw new Exception("LL is Empty");
+		}
+
+		if (idx < 0 || idx >= size) {
+			throw new Exception("Invalid Index");
+		}
+
+		Node temp = head;
+		for (int i = 1; i <= idx; i++) {
+			temp = temp.next;
+		}
+		return temp;
+	}
+
+	public void display() {
+		Node temp = head;
+		while (temp != null) {
+			System.out.print(temp.data + ", ");
+			temp = temp.next;
+		}
+	}
+
+	public void addLast(int item) {
+		// create new node
+
+		Node nn = new Node();
+		nn.data = item;
+		nn.next = null;
+
+		// attach
+		if (!isEmpty()) {
+			tail.next = nn;
+		}
+
+		// data members
+		if (isEmpty()) {
+			head = nn;
+			tail = nn;
+			size++;
+		} else {
+			tail = nn;
+			size++;
+		}
+
+	}
+
+	public void addFirst(int item) {
+		// create new node
+		Node nn = new Node();
+		nn.data = item;
+		nn.next = null;
+
+		// attach
+		nn.next = head;
+
+		// data members
+		if (isEmpty()) {
+			head = nn;
+			tail = nn;
+			size++;
+		} else {
+			head = nn;
+			size++;
+		}
+	}
+
+	public void addAt(int idx, int item) throws Exception {
+		if (idx < 0 || idx > size()) {
+			throw new Exception("Invalid Idx");
+		}
+		if (idx == 0) {
+			addFirst(item);
+		} else if (idx == size) {
+			addLast(item);
+		} else {
+			// create a new node
+			Node nn = new Node();
+			nn.data = item;
+			nn.next = null;
+
+			// access prev and next node
+			Node nm1 = getNodeAt(idx - 1);
+			Node np1 = nm1.next;
+
+			// link
+			nm1.next = nn;
+			nn.next = np1;
+
+			// data members
+			size++;
+		}
+	}
+	// lec 21
+
+	public int removeFirst() throws Exception {
+		int rv = head.data;
+		if (size == 0) {
+			throw new Exception("LL is Empty");
+		}
+		if (size == 1) {
+			head = null;
+			tail = null;
+			size--;
+		} else {
+			head = head.next;
+			size--;
+		}
+		return rv;
+	}
+
+	public int removeLast() throws Exception {
+		int rv = tail.data;
+		if (size == 0) {
+			throw new Exception("LL is Empty");
+		}
+		if (size == 1) {
+			head = null;
+			tail = null;
+			size--;
+		} else {
+			Node ls = getNodeAt(size - 2);// 2nd last node
+			ls.next = null;// usko kardo null
+			tail = ls;// tail should now point towards it
+			size--;
+		}
+		return rv;
+	}
+
+	public int removeAt(int idx) throws Exception {
+		if (size == 0) {
+			throw new Exception("LL is Empty");
+		}
+		if (idx < 0 && idx >= size) {
+			throw new Exception("Invalid Idx");
+		}
+		if (idx == 0) {
+			return removeFirst();
+		}
+		if (idx == size - 1) {
+			return removeLast();
+		} else {
+			Node nm1 = getNodeAt(idx - 1);
+			Node n = getNodeAt(idx);
+			Node np1 = getNodeAt(idx + 1);
+			// link
+			nm1.next = np1;
+			// data members
+			size--;
+			// value
+			return n.data;
+
+		}
+
+	}
+
+	public void reverseLLdata() throws Exception {
+		for (int i = 0; i <= size / 2; i++) {
+			int temp = getNodeAt(i).data;
+			getNodeAt(i).data = getNodeAt(size - 1 - i).data;
+			getNodeAt(size - 1 - i).data = temp;
+		}
+		display();
+	}
+
+//reverse iterativel node
+	public void reverseLlIterNode() throws Exception {
+
+		Node prev = head;
+		Node curr = prev.next;
+
+		while (curr != null) {
+			Node ahead = curr.next;
+
+			curr.next = prev;
+			prev = curr;
+			curr = ahead;
+		}
+
+		Node temp = head;
+		head = tail;
+		tail = temp;
+
+		tail.next = null;
+	}
+
+	public void reverseLlRecurNode() throws Exception {
+		reverseLlRecurNode(head, head.next);
+
+		// swap head and tail one time
+
+		Node temp = head;
+		head = tail;
+		tail = temp;
+
+		tail.next = null;
+
+		display();
+	}
+
+	// recursively node
+	private void reverseLlRecurNode(Node prev, Node curr) throws Exception {
+		if (curr == null) {
+			return;
+		}
+		reverseLlRecurNode(curr, curr.next);
+
+		curr.next = prev;
+		// we have access to 1k 2k || 2k 3k || 3k 4k || 4k 5k || 5k null
+		// 5k next mein 4k
+		// 4k ke next mein 3k
+	}
+
+	// recursively data
+	public void revLlRecrDataCompN() {
+		revLlRecrDataCompN(head, head, 0);
+		display();
+	}
+
+	private Node revLlRecrDataCompN(Node left, Node right, int counter) {
+		if (right == null) {
+			return left;
+		}
+		// Correct left for next fn frame
+		Node cl = revLlRecrDataCompN(left, right.next, counter + 1);
+
+		// swap >= fn frames/2 times
+		if (counter >= size / 2) {
+			int temp = cl.data;
+			cl.data = right.data;
+			right.data = temp;
+		}
+		return cl.next;
+	}
+
+	public void reverseFold() {
+		reverseFold(head, head, 0);
+		display();
+	}
+
+	// reverse fold
+	private Node reverseFold(Node left, Node right, int counter) {
+		if (right == null) {
+			return left;
+		}
+		// correct left
+		Node cl = reverseFold(left, right.next, counter + 1);
+
+		if (counter > size / 2) {
+			// capture value
+			Node ahead = cl.next;
+			// left se right direction wala connection
+			cl.next = right;
+			// right se left wala connection
+			right.next = ahead;
+
+			// correct left for next function frame
+			return ahead;
+		}
+		if (counter == size / 2) {
+			tail = right;
+			tail.next = null;
+		}
+		// to break the connection when at overlapping
+		return null;
+
+	}
+
+	private class HeapMover {
+		Node left;
+	}
+
+	public void revDRHM() {
+		HeapMover mover = new HeapMover();
+
+		mover.left = head;
+
+		revDRHM(mover, head, 0);
+	}
+
+	private void revDRHM(HeapMover mover, Node right, int c) {
+		if (right == null) {
+			return;
+		}
+		revDRHM(mover, right.next, c + 1);
+
+		if (c >= size / 2) {
+			// swap
+
+			int temp = mover.left.data;
+			mover.left.data = right.data;
+			right.data = temp;
+		}
+		mover.left = mover.left.next;// heap changes
+	}
+
+	// lecture 22
+
+	public int LLintersection() {
+		Node n1 = new Node(10);
+		Node n2 = new Node(20);
+		Node n3 = new Node(30);
+		Node n4 = new Node(40);
+		Node n5 = new Node(50);
+		Node n6 = new Node(60);
+		Node n7 = new Node(70);
+		Node n8 = new Node(80);
+
+		n1.next = n2;
+		n2.next = n3;
+		n3.next = n4;
+		n4.next = n5;
+		n5.next = n6;
+
+		n7.next = n8;
+		n8.next = n4;
+
+		Node a = n1;
+		Node b = n7;
+		while (a != b) {
+			a = (a == null ? n7 : a.next);
+			b = (b == null ? n1 : b.next);
+		}
+		return a.data;
+
+	}
+
+	public void createDummyListLoop() {
+
+		Node n1 = new Node(10);
+		Node n2 = new Node(20);
+		Node n3 = new Node(30);
+		Node n4 = new Node(40);
+		Node n5 = new Node(50);
+		Node n6 = new Node(60);
+		Node n7 = new Node(70);
+		Node n8 = new Node(80);
+		Node n9 = new Node(90);
+
+		n1.next = n2;
+		n2.next = n3;
+		n3.next = n4;
+		n4.next = n5;
+		n5.next = n6;
+		n6.next = n7;
+		n7.next = n8;
+		n8.next = n9;
+		n9.next = n4;
+
+		this.head = n1;
+	}
+
+	public boolean detectRemoveLoop() {
+		// detect loop
+		Node slow = head;
+		Node fast = head;
+
+		while (fast != null && fast.next != null) {
+			// to handle odd even case
+
+			slow = slow.next;
+			fast = fast.next.next;
+
+			if (slow == fast) {
+				break;
+			}
+
+		}
+		if (slow == fast) {
+			// remove loop
+
+			Node start = head;
+			Node loop = slow;
+
+			while (start.next != loop.next) {
+				start = start.next;
+				loop = loop.next;
+			}
+			// condition violate hence found
+
+			loop.next = null;
+			return true;
+
+		} else {
+			// loop doesn't exist
+			return false;
+		}
+	}
+
+	public void createDummyListDuplicate() {
+
+		Node n1 = new Node(10);
+		Node n2 = new Node(20);
+		Node n3 = new Node(20);
+		Node n4 = new Node(20);
+		Node n5 = new Node(30);
+		Node n6 = new Node(30);
+		Node n7 = new Node(40);
+		Node n8 = new Node(50);
+		Node n9 = new Node(50);
+
+		n1.next = n2;
+		n2.next = n3;
+		n3.next = n4;
+		n4.next = n5;
+		n5.next = n6;
+		n6.next = n7;
+		n7.next = n8;
+		n8.next = n9;
+		this.head = n1;
+	}
+
+	public void removeDuplicates() {
+
+		Node fakehead = new Node();
+		fakehead.next = this.head;
+		Node prev = fakehead;
+		Node curr = head;
+
+		while (curr != null) {
+			while (curr.next != null && curr.data == curr.next.data) {
+				curr = curr.next;
+			}
+				if (prev.next == curr) {
+					prev = curr;
+				} else {
+					prev.next = curr.next;
+				}
+				curr = curr.next;
+			}	
+		
+		head = fakehead.next;
+
+	}
+//	
+//	public void createDummyListKreverse() {
+//
+//		Node n1 = new Node(10);
+//		Node n2 = new Node(20);
+//		Node n3 = new Node(30);
+//		Node n4 = new Node(40);
+//		Node n5 = new Node(50);
+//		Node n6 = new Node(60);
+//		Node n7 = new Node(70);
+//		Node n8 = new Node(80);
+//		Node n9 = new Node(90);
+//
+//		n1.next = n2;
+//		n2.next = n3;
+//		n3.next = n4;
+//		n4.next = n5;
+//		n5.next = n6;
+//		n6.next = n7;
+//		n7.next = n8;
+//		n8.next = n9;
+//		this.head = n1;
+//	}
+	public void kRev(int k) throws Exception {
+		LinkedList prev = null;
+		while(size!=0) {
+			LinkedList curr = new LinkedList();
+			
+			for(int i = 1; i<=k && size!=0; i++) {
+				curr.addFirst(removeFirst());
+			}
+			if(prev == null) {
+				prev = curr;
+			}
+			else {
+				prev.tail.next = curr.head;
+				prev.tail = curr.tail;
+				prev.size += curr.size;
+			}
+		}
+		head = prev.head;
+		tail = prev.tail;
+		size = prev.size;
+	}
+	
+	
+
+}
