@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/image_view_flag"
+        android:layout_width="73dp"
+        android:layout_height="56dp"
+        tools:src="@drawable/ic_launcher_background" />
+    <TextView
+        android:id="@+id/text_view_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="india"
+        android:layout_gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        />
+
+</LinearLayout>
