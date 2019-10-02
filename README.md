@@ -4,3 +4,6 @@ Make your Pull requests in this repo.
 
 
 Repo ko star dena compulsory hai nahi to tshirt cancel ho sakti hai
+
+
+<strong>Noobs</strong> please sign in first at <a href="https://hacktoberfest.digitalocean.com">Here</a>
