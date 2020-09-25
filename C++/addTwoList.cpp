@@ -50,7 +50,8 @@ struct node* addBoth(struct node** l1,struct node** l2){
  	return dumy;
 } 
 
-int main(){
+int main()
+{
 	struct node* l1=NULL;
 	struct node* l2=NULL;
 	int n;
