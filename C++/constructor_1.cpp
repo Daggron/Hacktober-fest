@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
-class complex
-{
+class complex {
 	private: int real,img;
 	public: void read() {
 		cout<<"Enter the num 1"<<endl;
