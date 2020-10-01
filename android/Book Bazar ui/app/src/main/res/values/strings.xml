@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Book Bazar</string>
+    <string name="action_settings">Settings</string>
+    <string name="simple_text">the book app is very usefull you can buy new books at just cheap prices which will be very helpfull.it is the future of books they will be sold online by us.it the app which is made by samarth ,sanchit and arpit these are the co founders of application and the startup</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
+</resources>

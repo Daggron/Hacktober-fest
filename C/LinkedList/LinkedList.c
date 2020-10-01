@@ -113,7 +113,7 @@ void delete(){
 int main()
 {
     int choice;
-    printf("Single Linked List Operations :\n");
+    printf("Single Linked List Operations are as follows::\n");
     printf("1.Append\n");
     printf("2.Add at Beginning\n");
     printf("3.Add After\n");

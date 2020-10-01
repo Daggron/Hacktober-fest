@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OOPS IN JAVA SCRIPT</title>
+</head>
+<body>
+
+	<button id="btn">CLICK ME</button>
+
+</body>
+<script type="text/javascript">
+	var btn = document.getElementById('btn')
+	var obj = {
+		name: "Nitin",
+		age: "20"
+	}
+	var newf = abc.bind(abc)
+	function abc()
+	{
+		console.log(this)
+	}
+	btn.addEventListener("click",function(e)
+	{
+		newf();
+	})
+</script>
+</html>
