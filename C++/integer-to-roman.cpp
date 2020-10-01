@@ -1,7 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #include<stdlib.h>
-// #include<string.h>
 
 string conversion(int num){
 
