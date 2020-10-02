@@ -34,7 +34,7 @@ for(i=size-2;i>=0&&str[i]>=str[i+1];i--);
         l=0;
 }while(l);
 }
-//this is the main function created!
+//this is the main function3
 int main()
 {
    char str[10];
