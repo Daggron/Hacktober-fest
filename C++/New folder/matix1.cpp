@@ -42,7 +42,7 @@ class A
         cout<<m2[i][j];
     }
 };
-
+//main function added
 main()
 {
     A a1;
