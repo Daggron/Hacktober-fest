@@ -5,6 +5,7 @@ struct node{
 	struct node* next;
 };
  
+// Inserting node at beginning of list
 void insertBeg(struct node **h,int val){
 	struct node* n=(struct node*)malloc(sizeof(struct node));
 	n->data=val;
@@ -12,6 +13,7 @@ void insertBeg(struct node **h,int val){
 	*h=n;
 }
 
+// Merging 2 lists.
 struct node* addBoth(struct node** l1,struct node** l2){
 	struct node* dumy=NULL;
 	struct node* curr1=*l1;
