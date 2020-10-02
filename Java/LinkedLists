@@ -31,6 +31,7 @@ public class LinkedList {
 		if (isEmpty()) {
 			throw new Exception("LL is Empty");
 		}
+		// returns value of head i.e first node
 		return head.data;
 	}
 
@@ -45,7 +46,8 @@ public class LinkedList {
 		if (isEmpty()) {
 			throw new Exception("LL is Empty");
 		}
-
+                
+		// checks if index value is less than 0 or exceeds size
 		if (idx < 0 || idx >= size) {
 			throw new Exception("Invalid Index");
 		}

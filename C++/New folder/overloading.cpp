@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+//overloading
 class test
 {
 private:
@@ -15,12 +16,14 @@ public:
     }
     void display()
     {
-    cout<<"count:"<<count;
+    cout<<"count: "<<count;
     }
 };
 int main()
 {
 test t;
+t++;
+t.display();
 t++;
 t.display();
 return 0;

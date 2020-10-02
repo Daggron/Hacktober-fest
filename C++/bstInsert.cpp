@@ -6,6 +6,7 @@ struct node{
 	struct node* right;
 };
 
+// Creating new Node
 struct node *newNode(int item) 
 { 
     struct node *temp =  (struct node *)malloc(sizeof(struct node)); 
@@ -14,6 +15,7 @@ struct node *newNode(int item)
     return temp; 
 } 
 
+//Inserting node to the tree.
 struct node* insert(struct node* h,int data){
 		if(h==NULL){
 			return newNode(data);

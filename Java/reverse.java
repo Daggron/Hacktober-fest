@@ -16,7 +16,7 @@ class main
         int new_number=0;
         while(s.empty()!=true)
         {
-            new_number=new_number+(int)Math.pow(10,count)*s.pop();
+            new_number=new_number+(int)Math.pow(10,count)*s.pop(); // forming a new reversed number
             count++;
         }
         System.out.println(new_number);
