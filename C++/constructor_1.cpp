@@ -13,7 +13,7 @@ class complex {
 		real = a;
 		img = b;
 	}
-	complex(complex &c1, complex &c2) {
+	complex(complex &c1, complex &c2) {  //using reference to objects passed
 		real = c1.real + c2.real;
 		img = c1.img + c2.img;
 	}
