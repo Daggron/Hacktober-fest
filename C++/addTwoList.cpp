@@ -5,7 +5,7 @@ struct node{
 	struct node* next;
 };
  
-// Inserting node at beginning of list
+// Inserting node at beginning of list using function
 void insertBeg(struct node **h,int val){
 	struct node* n=(struct node*)malloc(sizeof(struct node));
 	n->data=val;
