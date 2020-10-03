@@ -58,6 +58,7 @@ int caclSubSequence(char X[],char Y[],int m,int n)
 	printf("\n");
 	return LCS[m][n];
 }
+//main function added
 int main()
 {
 	char X[]="ABCDEF";
