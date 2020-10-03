@@ -21,6 +21,7 @@ class complex {
 		cout<<real<<" "<<img;
 	}
 };
+//this is main function
 int main()
 {
 	complex c1; //default constructor
