@@ -12,7 +12,7 @@ function getUserId(name){
    return new Promise((resolve,reject)=>{
 
     setTimeout(()=>{
-       resolve(20)
+       resolve(name)
     },2000);
       
    })
@@ -22,12 +22,12 @@ function getUserId(name){
 function getBal(id){
     
         return new Promise((resolve,reject)=>{
-            resolve(2000)
+            resolve(id)
         })
 }
 
 
 getUserId("abhay")
-.then(id=>{return getBal(20)})
+.then(id=>{return getBal(id)})
 .then(bal=>console.log(bal))
 .catch(err=>console.log(err));
