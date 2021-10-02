@@ -33,4 +33,5 @@ int main(){
 	struct node* head=NULL;
 	head=insert(head,2);
 	printf("%d",head->data);
+	printf("commit2");
 }
