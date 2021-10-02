@@ -22,6 +22,7 @@ int main() {
 	cin>>n;
 	cin>>w;
 	cin>>l;
+	cout<<"Commit2";
 	long long int h[n];
 	long long int r[n];
 	for(long long int i=0;i<n;i++){
