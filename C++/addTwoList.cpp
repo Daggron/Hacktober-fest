@@ -57,6 +57,7 @@ int main()
 	struct node* l1=NULL;
 	struct node* l2=NULL;
 	int n;
+	cout<<"commit4";
 	scanf("%d",&n);
 	for(int i=0;i<n;i++){
 		int k,l;
