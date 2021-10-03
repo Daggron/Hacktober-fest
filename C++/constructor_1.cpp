@@ -6,6 +6,7 @@ class complex {
 		cout<<"Enter the num 1"<<endl;
 		cin>>real;
 		cout<<"Enter the num 2"<<endl;
+		cout<<"Commit3";
 		cin>>img;
 	}
 	complex(){}
