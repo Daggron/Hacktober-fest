@@ -9,6 +9,7 @@ int main()
     {
         scanf("%d", &a[i]);
     }
+    //sort the elements
     for(i=0;i<n;i++)
     {
         for(j=i+1;j<n;j++)
@@ -29,6 +30,7 @@ int main()
     scanf("%d", &search);
     beg=0;
     end=n-1;
+    //find middle element
     mid=(beg+end)/2;
     while(beg<=end)
     {
