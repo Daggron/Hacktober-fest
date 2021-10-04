@@ -7,6 +7,8 @@ usr=input('Enter Email Id:')
 pwd=input('Enter Password:') 
 
 driver = webdriver.Chrome(ChromeDriverManager().install()) 
+# Added chrome.exe
+driver = webdriver.Chrome('chromedriver.exe')
 driver.get('https://www.facebook.com/') 
 print ("Opened facebook") 
 sleep(1) 
