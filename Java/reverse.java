@@ -5,8 +5,10 @@ class main
     {
         Scanner scan=new Scanner(System.in);
         int n=scan.nextInt();
+        //Input integers
         Stack<Integer> s=new Stack<Integer>();
         int digit,count=0;
+        //Add to stack
         while(n!=0)
         {
             digit=n%10;
