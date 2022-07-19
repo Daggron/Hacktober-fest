@@ -1,0 +1,27 @@
+{
+        scanf("%d", &a[i]);
+    }
+    //sort the elements
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+@@ -29,6 +30,7 @@ int main()
+    scanf("%d", &search);
+    beg=0;
+    end=n-1;
+    //find middle element
+    mid=(beg+end)/2;
+    while(beg<=end)
+    {
+    
+@@ -5,8 +5,10 @@ public static void main(String args[])
+    {
+        Scanner scan=new Scanner(System.in);
+        int n=scan.nextInt();
+        //Input integers
+        Stack<Integer> s=new Stack<Integer>();
+        int digit,count=0;
+        //Add to stack
+        while(n!=0)
+        {
+            digit=n%10;
