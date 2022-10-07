@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Calculator {
 
@@ -11,10 +11,10 @@ public class Calculator {
         double first = reader.nextDouble();
         double second = reader.nextDouble();
 
-        System.out.print("Enter an operator (+, -, *, /): ");
+        System.out.print("Enter an operator (+, -, *, /,^): ");
         char operator = reader.next().charAt(0);
 
-        double result;
+        double result=0;
 
         switch(operator)
         {
@@ -33,6 +33,10 @@ public class Calculator {
             case '/':
                 result = first / second;
                 break;
+            case '^':
+                result = Math.pow(first,second);
+                break;
+                
 
             // operator doesn't match any case constant (+, -, *, /)
             default:
